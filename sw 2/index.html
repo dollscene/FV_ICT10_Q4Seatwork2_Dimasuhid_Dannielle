@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <title>Seatwork 2 </title>
+    <style>
+        .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+input[type="text"] {
+    padding: 12px;
+    border: 2px solid #ffdae0;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+input[type="text"]:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.2);
+}
+
+
+.btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, 0.3s;
+}
+#add-btn {
+    background-color: #ffb6c1; /* Light Pink */
+    color: white;
+}
+button:last-child {
+    background-color: #ff69b4; /* Darker Pink */
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+#output-list {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px dashed #ffc0cb;
+}
+
+#output-list strong {
+    display: block;
+    color: #ff1493;
+    margin-bottom: 10px;
+}
+
+#list-container {
+    background: #fffafa; 
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 50px;
+    color: #333;
+}
+
+    </style>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <h2 style="text-align: center">Grade 10 Classmates</h2>
+    <p style="text-align: center">Add and view your classmates easily</p>
+    <div class="input-box">
+        <input type="text" id="name" placeholder="Student Name">
+        <input type="text" id="section" placeholder="Section">
+        <input type="text" id="subject" placeholder="Favorite subject">
+        <div class="btns">
+            <button id="add-btn" py-click="add_classmate_func">Add classmate</button>
+            <button id="show-btn" py-click="display_list">Show List</button>
+        </div>
+    </div>
+
+    <div id="output-list">
+        <strong>Classmate List:</strong>
+        <div id="list-container"></div>
+    </div>
+</div>
+  <script type="py" src="main.py" configs="pyscript.json"></script>
+
+</body>
+</html>
